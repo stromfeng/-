@@ -1,0 +1,20 @@
+--查看密码策略
+SELECT profile,resource_type,resource_name,limit FROM dba_profiles WHERE resource_type='PASSWORD' AND profile='DEFAULT';
+
+--取消密码的复杂度/VERIFY_FUNCTION_11G
+alter profile default limit password_verify_function null;
+
+--取消密码不能重复天数/30天
+alter profile default limit password_reuse_time unlimited;
+
+------------------------
+设置页面的总行数
+show pagesize
+
+set pagesize 200 显示页的总行数
+
+--显示行的宽度
+show linesize
+
+--设置行的宽度
+set linesize = 200
